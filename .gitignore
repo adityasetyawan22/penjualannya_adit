@@ -13,3 +13,14 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Android Studio / Gradle
+.gradle/
+/build/
+
+# Google services config (contains API keys)
+app/google-services.json
+
+# Keystore files
+*.jks
+*.keystore

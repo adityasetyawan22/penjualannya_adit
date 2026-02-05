@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="#FFFFFF">
 
@@ -12,90 +12,69 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Icon/Logo di kiri tanpa border -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <!-- Icon/Logo di kiri -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="#FFFFFF">
-
-            <ImageView
-                android:id="@+id/imgLogo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="8dp"
-                android:background="#82D7FF"
-                android:src="@drawable/category"
-                android:contentDescription="Logo" />
-
-        </com.google.android.material.card.MaterialCardView>
+            android:padding="8dp"
+            android:background="#82D7FF"
+            android:src="@drawable/category"
+            android:contentDescription="Logo" />
 
         <!-- Teks Kategori di samping logo -->
         <TextView
             android:id="@+id/tvKategori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/cardLogo"
+            android:layout_toEndOf="@id/imgLogo"
             android:layout_centerVertical="true"
             android:layout_marginStart="12dp"
             android:text="Kategori"
             android:textSize="18sp"
-            android:textColor="#2C3E50"
-            android:textStyle="normal" />
+            android:textColor="#2C3E50" />
 
-        <!-- Status Aktif di kanan tanpa border -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardAktif"
+        <!-- Status Aktif di kanan -->
+        <LinearLayout
+            android:id="@+id/layoutAktif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="#FFFFFF">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:visibility="visible">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/imgStatusAktif"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ceklist"
+                android:contentDescription="Status Aktif" />
+
+            <TextView
+                android:id="@+id/tvAktif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingTop="6dp"
-                android:paddingBottom="6dp">
+                android:layout_marginStart="6dp"
+                android:text="Aktif"
+                android:textSize="12sp"
+                android:textColor="#090909" />
 
-                <ImageView
-                    android:id="@+id/imgStatusAktif"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ceklist"
-                    android:contentDescription="Status Aktif" />
-
-                <TextView
-                    android:id="@+id/tvAktif"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:text="Aktif"
-                    android:textSize="12sp"
-                    android:textColor="#090909"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
     </RelativeLayout>
 
+    <!-- Divider -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#000000" />
-
-    </LinearLayout>
+        android:background="#E0E0E0" />
 
 </LinearLayout>
