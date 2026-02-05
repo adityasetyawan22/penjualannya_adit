@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Penjualannya_adit">
         <activity
+            android:name=".kategori.DetailKategoriFragment"
+            android:exported="false" />
+        <activity
+            android:name=".kategori.ModKategoriActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kategori.DataKategoriActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
