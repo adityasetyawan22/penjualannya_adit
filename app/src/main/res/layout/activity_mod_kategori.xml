@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#E8F5F3">
 
-    <!-- Header dengan tombol back -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,10 +16,11 @@
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="17dp"
-            android:layout_height="23dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:contentDescription="Back"
-            android:src="@drawable/back" />
+            android:src="@drawable/arrow"
+            app:tint="#333333" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,20 +28,18 @@
             android:layout_marginStart="12dp"
             android:text="Tambah Kategori"
             android:textSize="16sp"
-            android:textColor="#2C3E50"
-            android:textStyle="normal" />
+            android:textColor="#2C3E50" />
 
     </LinearLayout>
 
-    <!-- Content Area -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- Title (Ditengahkan) -->
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tambah Kategori"
@@ -50,26 +49,23 @@
             android:gravity="center"
             android:layout_marginBottom="32dp" />
 
-        <!-- Input Nama Kategori -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nama Kategori"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="#9C27B0"
-            app:hintTextColor="#9C27B0"
+            app:boxStrokeColor="@color/purple_500"
+            app:hintTextColor="@color/purple_500"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNamaKategori"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:padding="16dp" />
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Dropdown Pilih Jenis -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,10 +75,10 @@
             android:layout_marginBottom="8dp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlineBox.ExposedDropdownMenu"
-            app:boxStrokeColor="#9C27B0"
+            app:boxStrokeColor="@color/purple_500"
             android:layout_marginBottom="32dp">
 
             <AutoCompleteTextView
@@ -90,13 +86,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:text="Pilih"
+                android:hint="Pilih Status"
                 android:padding="16dp"
                 android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Tombol Simpan -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSimpan"
             android:layout_width="match_parent"
@@ -105,8 +100,7 @@
             android:textSize="16sp"
             android:textColor="#FFFFFF"
             android:backgroundTint="#9C27B0"
-            app:cornerRadius="28dp"
-            android:elevation="4dp" />
+            app:cornerRadius="28dp" />
 
     </LinearLayout>
 

@@ -7,9 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context="kategori.DataKategoriActivity">
+    tools:context=".kategori.DataKategoriActivity">
 
-    <!-- Linear Layout untuk Header dan RecyclerView -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,7 +25,6 @@
             android:background="#FFFFFF"
             android:elevation="4dp">
 
-            <!-- Tombol Back -->
             <ImageView
                 android:id="@+id/btnBack"
                 android:layout_width="48dp"
@@ -38,7 +36,7 @@
                 android:src="@drawable/arrow"
                 app:tint="#333333" />
 
-            <!-- Search Bar Container -->
+            <!-- Search Bar -->
             <LinearLayout
                 android:id="@+id/searchBarContainer"
                 android:layout_width="0dp"
@@ -47,21 +45,18 @@
                 android:layout_marginStart="10dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:background="@drawable/bg_search"
                 android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:clickable="true"
-                android:focusable="true">
+                android:paddingEnd="12dp">
 
-                <!-- Icon Search -->
                 <ImageView
                     android:id="@+id/btnSearchh"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/search"
                     android:contentDescription="Cari"
-                    app:tint="#666666"/>
+                    app:tint="#666666" />
 
-                <!-- Text/EditText Search -->
                 <EditText
                     android:id="@+id/etSearch"
                     android:layout_width="0dp"
@@ -70,14 +65,12 @@
                     android:layout_marginStart="12dp"
                     android:hint="Cari Data Kategori"
                     android:textSize="16sp"
-                    android:textStyle="italic"
                     android:textColor="#333333"
                     android:textColorHint="#999999"
                     android:background="@android:color/transparent"
-                    android:border="none"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:imeOptions="actionSearch"/>
+                    android:imeOptions="actionSearch" />
 
             </LinearLayout>
 
@@ -92,14 +85,13 @@
             android:paddingBottom="80dp"
             android:clipToPadding="false"
             android:background="#FFFFFF"
-            android:contentDescription="Lihat kategori"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_data_kategori"
-            tools:itemCount="8"/>
+            tools:itemCount="8" />
 
     </LinearLayout>
 
-    <!-- Floating Action Button -->
+    <!-- FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnTambah"
         android:layout_width="wrap_content"
@@ -110,6 +102,6 @@
         android:contentDescription="Tambah Kategori"
         app:tint="#000000"
         app:backgroundTint="#C27BE8"
-        app:fabSize="normal"/>
+        app:fabSize="normal" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
