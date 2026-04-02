@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE9F8">
+
+    <!-- ===== KONTEN UTAMA ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#EEE9F8">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp">
+
+            <!-- Baris Back + Search + Refresh -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <!-- FIX: Touch target minimal 48x48dp -->
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="12dp"
+                    android:src="@drawable/arrow"
+                    android:contentDescription="@string/desc_kembali"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <!-- FIX: Hapus nested weight, pindahkan ke LinearLayout luar -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/search"
+                        android:contentDescription="@string/desc_cari"
+                        app:tint="#AAAAAA" />
+
+                    <!-- FIX:
+                         - Hapus layout_weight di dalam (nested weight dihilangkan, parent sudah 0dp+weight)
+                         - textColor diganti lebih gelap agar contrast cukup
+                         - paddingStart & End simetris
+                         - autofillHints ditambahkan
+                         - Touch target: height di-set 48dp via parent -->
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_pencarian_produk"
+                        android:textSize="15sp"
+                        android:textColor="#222222"
+                        android:textColorHint="#888888"
+                        android:background="@null"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:singleLine="true"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:autofillHints="no" />
+
+                </LinearLayout>
+
+                <!-- FIX: Touch target minimal 48x48dp -->
+                <ImageView
+                    android:id="@+id/btnRefresh"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="12dp"
+                    android:src="@drawable/refresh"
+                    android:contentDescription="@string/desc_refresh"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- Garis bawah search -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Chip Filter Kategori -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="10dp"
+                android:clipToPadding="false">
+
+                <LinearLayout
+                    android:id="@+id/layoutChipKategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- FIX: Semua chip height minimal 48dp agar touch target cukup -->
+                    <TextView
+                        android:id="@+id/chipSemua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="@string/chip_semua"
+                        android:textSize="14sp"
+                        android:textColor="#6A3DE8"
+                        android:gravity="center"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipMakanan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="@string/chip_makanan"
+                        android:textSize="14sp"
+                        android:textColor="#444444"
+                        android:gravity="center"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipMinuman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="@string/chip_minuman"
+                        android:textSize="14sp"
+                        android:textColor="#444444"
+                        android:gravity="center"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipSnack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="@string/chip_snack"
+                        android:textSize="14sp"
+                        android:textColor="#444444"
+                        android:gravity="center"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProduk"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingTop="4dp"
+            android:paddingBottom="88dp" />
+
+    </LinearLayout>
+
+    <!-- FAB Tambah Produk -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabTambah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:src="@drawable/add"
+        android:contentDescription="@string/desc_tambah_produk"
+        app:backgroundTint="#DDD9F5"
+        app:tint="#5A3DC8"
+        app:fabSize="normal"
+        app:elevation="6dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

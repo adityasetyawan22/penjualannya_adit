@@ -1,3 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">penjualannya_adit</string>
+
+    <!-- App Name -->
+    <string name="app_name">PenjualanAdit</string>
+
+    <!-- Placeholder item produk -->
+    <string name="desc_foto_produk">Foto Produk</string>
+    <string name="placeholder_nama_produk">Nama Produk</string>
+    <string name="placeholder_harga">Rp0</string>
+    <string name="placeholder_kategori">Kategori</string>
+    <string name="placeholder_stok">Tidak Terbatas</string>
+    <string name="placeholder_cabang">Utama</string>
+
+    <!-- Status -->
+    <string name="status_aktif">Aktif</string>
+    <string name="status_nonaktif">Nonaktif</string>
+
+    <!-- Content description icon -->
+    <string name="desc_kategori">Kategori</string>
+    <string name="desc_stok">Stok</string>
+    <string name="desc_cabang">Cabang</string>
+    <string name="desc_status">Status</string>
+
+    <!-- Data Produk - Content Description -->
+    <string name="desc_kembali">Kembali</string>
+    <string name="desc_cari">Cari produk</string>
+    <string name="desc_refresh">Refresh data</string>
+    <string name="desc_tambah_produk">Tambah produk baru</string>
+
+    <!-- Data Produk - Hint -->
+    <string name="hint_pencarian_produk">Cari produk…</string>
+
+    <!-- Data Produk - Chip Kategori -->
+    <string name="chip_semua">Semua</string>
+    <string name="chip_makanan">Makanan</string>
+    <string name="chip_minuman">Minuman</string>
+    <string name="chip_snack">Snack</string>
+
 </resources>
